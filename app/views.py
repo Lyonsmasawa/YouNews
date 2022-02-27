@@ -22,3 +22,10 @@ def articles(id):
     title = f'{id}'
 
     return render_template("articles.html", id = id, title = title, articles = articles)
+
+@app.errorhandler(404)
+def four_Ow_four(error):
+    """
+    Function to render the 404 error
+    """
+    return render_template('fourOwfour.html'),404
