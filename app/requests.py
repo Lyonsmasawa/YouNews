@@ -1,6 +1,3 @@
-from nis import cat
-from this import d
-from unicodedata import category
 from app import app
 import urllib.request, json
 from .models import news
