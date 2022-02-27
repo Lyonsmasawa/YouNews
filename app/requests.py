@@ -78,7 +78,7 @@ def process_articles(articles_list):
         urlImage = article.get('urlToImage')
         author = article.get('author')
         url =  article.get('url')
-        date = article.get('date')
+        date = article.get('publishedAt')
     
         if urlImage:
             article_object = Article(title, urlImage, author, url, date)

@@ -51,6 +51,7 @@ body {
 
 .card h3 {
     color: black;
+    font-weight: 900;
 }
 
 .card-title {
@@ -62,10 +63,27 @@ body {
     padding: 1%;
     color: black;
 }
-.card a{
+.card h3 a{
+    border:  1px solid rgba(255, 0, 0, 0.637);
+    border-radius: 2px;
+    padding: 2%;
     color: black;
+}
+
+.xb{
+    color: red;
+    border: none;
+    font-size: 1.3rem;
+    background-color: transparent;
+    font-style: italic;
+    align-self: baseline;
+}
+.xb:hover{
+    background-color: red;
+    color: white;
 }
 
 .card-body {
     text-align: left;
+    font-size: 1.5rem;
 }
