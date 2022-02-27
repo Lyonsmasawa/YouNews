@@ -1,5 +1,7 @@
 import unittest
-from models import news
+import news
+
+News = news.New
 
 class NewsTest(unittest.TestCase):
     """
@@ -10,3 +12,10 @@ class NewsTest(unittest.TestCase):
         run before every test
         """
         self.new_news = News(1234, "News", "This is news", "https://newslink.com", "category", "En" )
+    
+    def test_instance(self):
+        """Test instance"""
+        self.assertTrue(isinstance(self.new_news, New))
+
+if  __name__ == '__main__':
+    unittest.main()
