@@ -7,7 +7,7 @@ def index():
     Root page
     """
     title = "YouNews"
-    return render_template('index.html', message = message, title = title)
+    return render_template('index.html', title = title)
 
 @app.route('/source/<int:source_id>')
 def articles(source_id):
