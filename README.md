@@ -19,7 +19,7 @@ This is a flask application that allows the user to view news sources and read r
 In your terminal:
 
 ```
-git clone https://github.com/Lyonsmasawa/
+git clone https://github.com/Lyonsmasawa/YouNews
 ```
 
 ```
