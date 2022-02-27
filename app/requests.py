@@ -51,7 +51,7 @@ def process_results(news_list):
 
     return news_results
 
-def get_article():
+def get_articles(id):
     """
     Gets the JSON response to our URL request
     """
@@ -71,17 +71,17 @@ def get_article():
 
 def process_articles(articles_list):
     
-    article_results = None
+    article_results = []
 
     for article in articles_list:
         title = article.get('title')
         urlImage = article.get('urlToImage')
         author = article.get('author')
         url =  article.get('url')
-        date = article.get('')
+        date = article.get('date')
     
-    if urlImage:
-        article_object = Article(title, urlImage, author, url, date)
-        article_results.append(article_object)
+        if urlImage:
+            article_object = Article(title, urlImage, author, url, date)
+            article_results.append(article_object)
 
     return article_results
