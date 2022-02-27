@@ -11,7 +11,7 @@ class NewsTest(unittest.TestCase):
         """
         run before every test
         """
-        self.new_news = News(1234, "News", "This is news", "https://newslink.com", "category", "En" )
+        self.new_news = News(1234, "News", "This is news", "https://newslink.com", "category", "En", "us" )
     
     def test_instance(self):
         """Test instance"""
@@ -27,6 +27,7 @@ class NewsTest(unittest.TestCase):
         self.assertEqual(self.new_news.url, "https://newslink.com")
         self.assertEqual(self.new_news.category, "category")
         self.assertEqual(self.new_news.language, "En")
+        self.assertEqual(self.new_news.country, "us")
 
 if  __name__ == '__main__':
     unittest.main()
