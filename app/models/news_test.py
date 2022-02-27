@@ -5,7 +5,7 @@ News = news.New
 
 class NewsTest(unittest.TestCase):
     """
-    Test class to test behaviour of class
+    Test class to test behavior of class
     """
     def setUp(self):
         """
