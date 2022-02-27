@@ -13,6 +13,11 @@
     {% endif %}
 </head>
 <body>
-    
+    <h1>NEWS HEADLINES</h1>
+    <ul>
+        {% for news in all_news %}
+            <li>{{ news.name }}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
