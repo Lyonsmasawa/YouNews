@@ -1,3 +1,6 @@
+from nis import cat
+from this import d
+from unicodedata import category
 from app import app
 import urllib.request, json
 from .models import news
@@ -19,12 +22,30 @@ def get_news():
 
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read
-        get_movies_response = json.loads(get_news_data)
+        get_news_response = json.loads(get_news_data)
 
         news_results = None 
 
-        if get_movies_response['results']:
-            news_results_list = get_movies_response['results']
-            movie_results = process_results(news_results_list)
+        if get_news_response['results']:
+            news_results_list = get_news_response['results']
+            news_results = process_results(news_results_list)
 
-    return movie_results
+    return news_results
+
+def process_results(news_list):
+    """
+    processes the results list and transforms them to a list of objects
+    """
+    news_results = []
+    for item in news_list:
+        id = item.get("id")
+        name = item.get("name")
+        description = item.get("description")
+        url = item.get("url")
+        category = item.get("category")
+        language = item.get("language")
+    
+        news_object = New(id, name, description, url, category, language)
+        news_results.append(news_object)
+
+    return news_results
