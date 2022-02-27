@@ -6,4 +6,10 @@ def index():
     """
     Root page
     """
-    return render_template('index.html')
+    message = "Hello world"
+    return render_template('index.html', message = message)
+
+@app.route('/source/<int:sources_id>')
+def articles(source_id):
+    """dislays articles from a given source"""
+    return render_template("articles.html", id = source_id)
