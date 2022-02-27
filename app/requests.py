@@ -1,7 +1,9 @@
 from app import app
 import urllib.request, json
 from .models import news
+from .models import articles
 
+Article = articles.Article
 New = news.New
 
 
@@ -10,6 +12,7 @@ api_key = app.config['NEWS_API_KEY']
 
 #get URL 
 base_url = app.config['NEWS_BASE_URL']
+article_url = app.config['NEWS_ARTICLE_URL']
 
 def get_news():
     """
@@ -47,3 +50,38 @@ def process_results(news_list):
         news_results.append(news_object)
 
     return news_results
+
+def get_article():
+    """
+    Gets the JSON response to our URL request
+    """
+    get_article_url = article_url.format(id, api_key)
+
+    with urllib.request.urlopen(get_article_url) as url:
+        get_article_data = url.read()
+        get_article_response = json.loads(get_article_data)
+
+        article_results = None 
+
+        if get_article_response['articles']:
+            article_results_list = get_article_response['articles']
+            article_results = process_articles(article_results_list)
+
+    return article_results
+
+def process_articles(articles_list):
+    
+    article_results = None
+
+    for article in articles_list:
+        title = article.get('title')
+        urlImage = article.get('urlToImage')
+        author = article.get('author')
+        url =  article.get('url')
+        date = article.get('')
+    
+    if urlImage:
+        article_object = Article(title, urlImage, author, url, date)
+        article_results.append(article_object)
+
+    return article_results
