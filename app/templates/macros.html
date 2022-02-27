@@ -1,7 +1,22 @@
 {% macro displaySources(all_news) %}
 
 {% for news in all_news %}
-<li>{{ news.name }}</li>
+<div class="col-md-3">
+    <div class="card">
+        <div class="source">
+            <a href="{{ news.url }}" target="_blank">{{news.name}} <span class="tooltip">Visit{{news.name}}</span></a>
+            <p>{{ news.language }}</p>
+        </div>
+        <div class="desc">
+            <p>{{ news.description }}</p>
+            <p>{{news.category}}</p>
+        </div>
+        <div class="link-to">
+            <a href="/source/{{ news.id }}">Visit Source</a>
+        </div>
+
+    </div>
+</div>
 {% endfor %}
 
 {% endmacro %}
