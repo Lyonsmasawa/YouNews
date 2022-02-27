@@ -78,10 +78,19 @@ def process_articles(articles_list):
         urlImage = article.get('urlToImage')
         author = article.get('author')
         url =  article.get('url')
-        date = article.get('publishedAt')
+        date_x = article.get('publishedAt')
+        date = slice_date(date_x)
     
         if urlImage:
             article_object = Article(title, urlImage, author, url, date)
             article_results.append(article_object)
 
     return article_results
+
+def slice_date(pass_date):
+    YYYY = pass_date[0:4]
+    MM = pass_date[5:7]
+    DD = pass_date[8:10]
+    time = pass_date[11:19]
+    new_date = f'{time} EAT, {DD}/{MM}/{YYYY}'
+    return new_date
