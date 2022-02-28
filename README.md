@@ -27,11 +27,19 @@ cd into folder
 ```
 
 ```
-chmod +x run.py
+add start.sh file
 ```
 
 ```
-./run.py
+add the API key
+```
+
+```
+chmod a+x start.sh
+```
+
+```
+./start.sh
 ```
 
 ### Technologies Used
