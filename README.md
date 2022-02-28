@@ -45,7 +45,11 @@ chmod a+x start.sh
 ### Technologies Used
 
 - Python3.10
-
+- Flask
+- Jinja2
+- Heroku
+- Bootstrap
+- HTML & CSS
 
 ## Author
 
