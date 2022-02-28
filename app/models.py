@@ -1,3 +1,11 @@
+class Article:
+    def __init__(self, title, urlImage, author, url, date):
+        self.title = title
+        self.urlImage = urlImage
+        self.author = author
+        self.url = url
+        self.date = date
+
 class New:
     """
     News Class to define news objects
@@ -10,6 +18,3 @@ class New:
         self.category = category
         self.language = language
         self.country = country
-
-        
-    

@@ -1,8 +1,8 @@
-from flask import render_template
-from app import app
-from app.requests import get_news, get_articles
+from flask import render_template, request, redirect, url_for
+from . import main
+from ..requests import get_news, get_articles
 
-@app.route('/')
+@main.route('/')
 def index():
     """
     Root page
@@ -14,7 +14,7 @@ def index():
     title = "YouNews"
     return render_template('index.html', title = title, all_news = all_news)
 
-@app.route('/source/<id>')
+@main.route('/source/<id>')
 def articles(id):
     """dislays articles from a given source"""
 
